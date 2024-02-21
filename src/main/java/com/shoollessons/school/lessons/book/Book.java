@@ -1,4 +1,4 @@
-package com.shoollessons.Shool.lessons.model;
+package com.shoollessons.school.lessons.book;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

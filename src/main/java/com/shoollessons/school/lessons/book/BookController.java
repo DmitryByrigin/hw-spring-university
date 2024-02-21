@@ -1,7 +1,5 @@
-package com.shoollessons.Shool.lessons.controlers;
+package com.shoollessons.school.lessons.book;
 
-import com.shoollessons.Shool.lessons.model.Book;
-import com.shoollessons.Shool.lessons.services.BookServices;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 

@@ -1,11 +1,9 @@
-package com.shoollessons.Shool.lessons.services;
+package com.shoollessons.school.lessons.book;
 
-import com.shoollessons.Shool.lessons.model.Book;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
 

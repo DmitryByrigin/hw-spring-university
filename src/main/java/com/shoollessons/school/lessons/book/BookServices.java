@@ -1,5 +1,6 @@
 package com.shoollessons.school.lessons.book;
 
+import com.shoollessons.school.lessons.user.User;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -11,18 +12,18 @@ import java.util.List;
 @AllArgsConstructor
 public class BookServices {
     private final List<Book> BOOKS = new ArrayList<>(List.of(
-            Book.builder()
-                    .Id(1L)
-                    .name("Название книги 1")
-                    .description("Описание книги 1")
-                    .content("Содержание книги 1")
-                    .build(),
-            Book.builder()
-                    .Id(2L)
-                    .name("Название книги 2")
-                    .description("Описание книги 2")
-                    .content("Содержание книги 2")
-                    .build()
+//            Book.builder()
+//                    .Id(1L)
+//                    .name("Название книги 1")
+//                    .description("Описание книги 1")
+//                    .content("Содержание книги 1")
+//                    .build(),
+//            Book.builder()
+//                    .Id(2L)
+//                    .name("Название книги 2")
+//                    .description("Описание книги 2")
+//                    .content("Содержание книги 2")
+//                    .build()
     ));
 
 
@@ -44,5 +45,21 @@ public class BookServices {
             }
         }
         return null;
+    }
+
+    public Book updateBookById(Long id, Book book) {
+        Book existBook = findBookByID(id);
+        existBook.setCount(book.getCount());
+        existBook.setIsbn(book.getIsbn());
+        existBook.setAuthorFirstname(book.getAuthorFirstname());
+        existBook.setTitle(book.getTitle());
+        existBook.setAuthorLastname(book.getAuthorLastname());
+        return book;
+    }
+
+    public Book createBook(Book book) {
+        book.setId(BOOKS.size() + 1L);
+        BOOKS.add(book);
+        return book;
     }
 }

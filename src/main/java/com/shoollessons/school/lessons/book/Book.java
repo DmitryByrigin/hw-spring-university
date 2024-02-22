@@ -7,11 +7,12 @@ import lombok.NoArgsConstructor;
 
 @Data
 @Builder
-@NoArgsConstructor
 @AllArgsConstructor
 public class Book {
     private Long Id;
-    private String name;
-    private String description;
-    private String content;
+    private String authorFirstname;
+    private String authorLastname;
+    private String title;
+    private String isbn;
+    private Integer count;
 }

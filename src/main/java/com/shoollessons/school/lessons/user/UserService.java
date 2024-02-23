@@ -4,16 +4,18 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.atomic.AtomicLong;
 
 @Service
 public class UserService {
+    private final AtomicLong lastIndex = new AtomicLong(1);
     private final List<User> users = new ArrayList<>(List.of(
-            User.builder().id(1L).email("kartfka123@.ua").firstName("Artem").lastName("Ponomarov").build(),
-            User.builder().id(2L).email("ka123@.ua").firstName("Karlos").lastName("Benik").build()));
+            User.builder().id(lastIndex.getAndIncrement()).email("kartfka123@.ua").firstName("Artem").lastName("Ponomarov").build(),
+            User.builder().id(lastIndex.getAndIncrement()).email("ka123@.ua").firstName("Karlos").lastName("Benik").build()));
 
 
     public User createUser(User user) {
-        user.setId(users.size() + 1L);
+        user.setId(lastIndex.getAndIncrement());
         users.add(user);
         return user;
     }

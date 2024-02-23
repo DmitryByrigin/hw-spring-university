@@ -1,12 +1,12 @@
 package com.shoollessons.school.lessons.book;
 
-import com.shoollessons.school.lessons.user.User;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+import java.util.concurrent.atomic.AtomicLong;
 
 @Service
 @AllArgsConstructor
@@ -25,6 +25,8 @@ public class BookServices {
 //                    .content("Содержание книги 2")
 //                    .build()
     ));
+
+    private final AtomicLong lastIndex = new AtomicLong(1);
 
 
     public List<Book> findAllBooks() {
@@ -58,7 +60,7 @@ public class BookServices {
     }
 
     public Book createBook(Book book) {
-        book.setId(BOOKS.size() + 1L);
+        book.setId(lastIndex.getAndIncrement());
         BOOKS.add(book);
         return book;
     }

@@ -27,7 +27,7 @@ public class BorrowingController {
     }
 
     @PostMapping
-    public Borrowing createBorrowing(@RequestBody Borrowing borrowing) {
+    public Borrowing createBorrowing(@RequestBody CreateBorrowingDTO borrowing) {
         return borrowingServices.createBorrowing(borrowing);
     }
 }

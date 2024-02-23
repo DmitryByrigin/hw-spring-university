@@ -1,13 +1,15 @@
 package com.shoollessons.school.lessons.user;
 
+import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
 @RequestMapping("/api/customers")
+@AllArgsConstructor
 public class UserController {
-    UserService userService = new UserService();
+    private final UserService userService;
 
     @PostMapping
     public User createCustomer(@RequestBody User user) {

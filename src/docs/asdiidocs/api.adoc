@@ -1,0 +1,10 @@
+= Book Api
+
+== Books
+
+=== Vytvorenie knihy
+
+*HTTP REQUEST*
+
+include:{snippets}/testVytvorKnihu/http-request.adoc
+include:{snippets}/testVytvorKnihu/request-fields.adoc

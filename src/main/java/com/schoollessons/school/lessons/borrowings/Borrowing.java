@@ -14,5 +14,9 @@ public class Borrowing {
     private Long bookId;
     private String authorName;
     private String title;
+
+    public Borrowing() {
+
+    }
 }
 

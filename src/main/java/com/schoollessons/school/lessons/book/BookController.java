@@ -1,4 +1,4 @@
-package com.shoollessons.school.lessons.book;
+package com.schoollessons.school.lessons.book;
 
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("api/books")
+@RequestMapping("/api/books")
 @AllArgsConstructor
 public class BookController {
     private final BookServices bookServices;

@@ -1,0 +1,60 @@
+= API Documentation
+
+This document provides a detailed description of the REST API for the School Lessons Application.
+
+== Overview
+
+The School Lessons Application provides a platform for managing books in a school library.
+
+== HTTP Verbs
+
+The API uses standard HTTP verbs:
+
+* `GET` - Retrieve a resource or list of resources
+* `POST` - Create a new resource
+* `PUT` - Update an existing resource
+* `DELETE` - Remove a resource
+
+== Error Handling
+
+In case of an error, the API will return a HTTP status code along with a JSON response body containing more details about the error.
+
+== Resources
+
+=== Book
+
+A book resource represents a book in the school library.
+
+==== Fields
+
+* `id` - The unique identifier for the book
+* `authorFirstname` - The first name of the author of the book
+* `authorLastname` - The last name of the author of the book
+* `title` - The title of the book
+* `isbn` - The ISBN of the book
+* `count` - The number of copies of the book available in the library
+
+==== Endpoints
+
+===== Create Book
+
+Creates a new book resource.
+
+* `POST /api/books-test`
+
+Request:
+
+[source,json]
+----
+{
+  "authorFirstname": "AuthorFirstName",
+  "authorLastname": "AuthorLastName",
+  "title": "Title",
+  "isbn": "ISBN",
+  "count": 1
+}
+----
+
+Response:
+
+* `200 OK` - The book was successfully created.

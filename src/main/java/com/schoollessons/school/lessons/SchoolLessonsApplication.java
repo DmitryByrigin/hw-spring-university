@@ -1,4 +1,4 @@
-package com.shoollessons.school.lessons;
+package com.schoollessons.school.lessons;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

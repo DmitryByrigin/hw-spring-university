@@ -1,9 +1,9 @@
-package com.shoollessons.school.lessons.borrowings;
+package com.schoollessons.school.lessons.borrowings;
 
-import com.shoollessons.school.lessons.book.Book;
-import com.shoollessons.school.lessons.book.BookServices;
-import com.shoollessons.school.lessons.user.User;
-import com.shoollessons.school.lessons.user.UserService;
+import com.schoollessons.school.lessons.book.Book;
+import com.schoollessons.school.lessons.book.BookServices;
+import com.schoollessons.school.lessons.user.User;
+import com.schoollessons.school.lessons.user.UserService;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 

@@ -14,4 +14,8 @@ public class Book {
     private String title;
     private String isbn;
     private Integer count;
+
+    public Book() {
+
+    }
 }

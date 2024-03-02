@@ -1,4 +1,4 @@
-package com.shoollessons.school.lessons.user;
+package com.schoollessons.school.lessons.user;
 
 import org.springframework.stereotype.Service;
 

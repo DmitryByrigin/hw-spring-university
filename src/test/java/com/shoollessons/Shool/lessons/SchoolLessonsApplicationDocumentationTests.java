@@ -1,10 +1,11 @@
 package com.shoollessons.Shool.lessons;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.shoollessons.school.lessons.SchoolLessonsApplication;
-import com.shoollessons.school.lessons.book.Book;
-import com.shoollessons.school.lessons.book.BookController;
-import com.shoollessons.school.lessons.book.BookServices;
+import com.schoollessons.school.lessons.SchoolLessonsApplication;
+import com.schoollessons.school.lessons.book.Book;
+import com.schoollessons.school.lessons.book.BookController;
+import com.schoollessons.school.lessons.book.BookServices;
+import com.schoollessons.school.lessons.user.User;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;

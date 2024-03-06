@@ -3,8 +3,8 @@
 		"_postman_id": "3432b667-698a-49f4-9001-91aec0bae0ca",
 		"name": "Spring-boot-lessons",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "29322617",
-		"_collection_link": "https://crimson-spaceship-657480.postman.co/workspace/BEST-WEB-DESIGN~87057148-830e-412b-8324-71c5cffb0eb5/collection/29322617-3432b667-698a-49f4-9001-91aec0bae0ca?action=share&source=collection_link&creator=29322617"
+		"_exporter_id": "31246654",
+		"_collection_link": "https://crimson-spaceship-657480.postman.co/workspace/BEST-WEB-DESIGN~87057148-830e-412b-8324-71c5cffb0eb5/collection/29322617-3432b667-698a-49f4-9001-91aec0bae0ca?action=share&source=collection_link&creator=31246654"
 	},
 	"item": [
 		{
@@ -242,7 +242,7 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/api/customers/3",
+							"raw": "http://localhost:8080/api/customers/1",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -251,7 +251,7 @@
 							"path": [
 								"api",
 								"customers",
-								"3"
+								"1"
 							]
 						}
 					},
@@ -392,7 +392,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/api/books",
+							"raw": "http://localhost:8080/api/books/1",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -400,7 +400,8 @@
 							"port": "8080",
 							"path": [
 								"api",
-								"books"
+								"books",
+								"1"
 							]
 						}
 					},
@@ -441,8 +442,17 @@
 					"request": {
 						"method": "PUT",
 						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"authorFirstname\": \"Peter1\",\r\n    \"authorLastname\": \"Lynch\",\r\n    \"title\": \"One up on Wall Street\",\r\n    \"isbn\": \"ISBN12A69C\",\r\n    \"count\": 10,\r\n    \"id\": 2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
 						"url": {
-							"raw": "http://localhost:8080/api/books/1",
+							"raw": "http://localhost:8080/api/books/2",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -451,7 +461,36 @@
 							"path": [
 								"api",
 								"books",
-								"1"
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New Request",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/books-test",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"books-test"
 							]
 						}
 					},
@@ -469,7 +508,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"customerId\": 4,\r\n    \"bookId\" : 5\r\n}",
+							"raw": "{\r\n    \"customerId\": 1,\r\n    \"bookId\" : 1\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -517,7 +556,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/api/borrowings/1",
+							"raw": "http://localhost:8080/api/borrowings/2",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -526,7 +565,7 @@
 							"path": [
 								"api",
 								"borrowings",
-								"1"
+								"2"
 							]
 						}
 					},

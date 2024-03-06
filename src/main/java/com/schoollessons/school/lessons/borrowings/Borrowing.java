@@ -1,5 +1,7 @@
 package com.schoollessons.school.lessons.borrowings;
 
+import com.schoollessons.school.lessons.book.Book;
+import com.schoollessons.school.lessons.user.User;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -12,16 +14,14 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Entity
 @Table(name = "borrowing")
-
 public class Borrowing {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private Long customerId;
-    private String customerName;
-    private Long bookId;
-    private String authorName;
-    private String title;
-
+    @ManyToOne
+    @JoinColumn(name = "customerId")
+    private User customer;
+    @ManyToOne
+    @JoinColumn(name = "bookId")
+    private Book book;
 }
-

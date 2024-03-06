@@ -1,4 +1,4 @@
-package com.shoollessons.school.lessons.user;
+package com.schoollessons.school.lessons.user;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -19,4 +19,5 @@ public class User {
     private String firstName;
     private String lastName;
     private String email;
+
 }

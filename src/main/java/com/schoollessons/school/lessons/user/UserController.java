@@ -1,4 +1,4 @@
-package com.shoollessons.school.lessons.user;
+package com.schoollessons.school.lessons.user;
 
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;

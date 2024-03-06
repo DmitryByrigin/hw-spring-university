@@ -1,26 +1,24 @@
-package com.shoollessons.school.lessons.borrowings;
+package com.schoollessons.school.lessons.book;
 
-import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import jakarta.persistence.*;
 
 @Data
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "borrowing")
-
-public class Borrowing {
+@Table(name = "book")
+public class Book {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private Long customerId;
-    private String customerName;
-    private Long bookId;
-    private String authorName;
+    private String authorFirstname;
+    private String authorLastname;
     private String title;
+    private String isbn;
+    private Integer count;
 }
-

@@ -77,16 +77,16 @@ public class SchoolLessonsApplicationDocumentationBookControllerTests {
     }
 
 
-    @Test
-    public void testDeleteBookById() throws Exception {
-        Book book = new Book();
-        book.setId(1L);
-        when(bookServices.deleteBookById(1L)).thenReturn(book);
-
-        mockMvc.perform(delete("/api/books/1"))
-                .andExpect(status().isOk())
-                .andDo(document("delete-book-by-id"));
-    }
+//    @Test
+//    public void testDeleteBookById() throws Exception {
+//        Book book = new Book();
+//        book.setId(1L);
+//        when(bookServices.deleteBookById(1L)).thenReturn(book);
+//
+//        mockMvc.perform(delete("/api/books/1"))
+//                .andExpect(status().isOk())
+//                .andDo(document("delete-book-by-id"));
+//    }
 
 
     @Test

@@ -2,44 +2,43 @@ package com.schoollessons.school.lessons.user;
 
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.atomic.AtomicLong;
+import java.util.Optional;
 
 @Service
 public class UserService {
-    private final AtomicLong lastIndex = new AtomicLong(1);
-    private final List<User> users = new ArrayList<>(List.of(
-            User.builder().id(lastIndex.getAndIncrement()).email("kartfka123@.ua").firstName("Artem").lastName("Ponomarov").build(),
-            User.builder().id(lastIndex.getAndIncrement()).email("ka123@.ua").firstName("Karlos").lastName("Benik").build()));
+    private final UserRepository userRepository;
 
+    public UserService(UserRepository userRepository) {
+        this.userRepository = userRepository;
+    }
 
     public User createUser(User user) {
-        user.setId(lastIndex.getAndIncrement());
-        users.add(user);
-        return user;
+        return userRepository.save(user);
     }
-
 
     public List<User> findAllUsers() {
-        return users;
+        return userRepository.findAll();
     }
-
 
     public User findUserById(Long id) {
-        return users.stream().filter(user -> user.getId().equals(id)).findFirst().orElse(null);
+        Optional<User> user = userRepository.findById(id);
+        return user.orElse(null);
     }
 
-    public User deleteUserById(Long id) {
-        users.remove(findUserById(id));
-        return null;
+    public void deleteUserById(Long id) {
+        userRepository.deleteById(id);
     }
 
     public User updateUserById(Long id, User newUser) {
-        User user = findUserById(id);
-        user.setFirstName(newUser.getFirstName());
-        user.setLastName(newUser.getLastName());
-        user.setEmail(newUser.getEmail());
-        return user;
+        Optional<User> optionalUser = userRepository.findById(id);
+        if (optionalUser.isPresent()) {
+            User user = optionalUser.get();
+            user.setFirstName(newUser.getFirstName());
+            user.setLastName(newUser.getLastName());
+            user.setEmail(newUser.getEmail());
+            return userRepository.save(user);
+        }
+        return null;
     }
 }
